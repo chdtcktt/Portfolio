@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/reset.css" rel="stylesheet" />
+    <link href="~/Content/themes/Bootswatch/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/hovercomponent.css" rel="stylesheet" />
+    <link href="~/Content/mystyles.css" rel="stylesheet" />
+    <script src="~/Content/../Content/../Scripts/modernizr-2.6.2.js"></script> 
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h3>@ViewBag.Header</h3>
+            <ul class="cl-effect-6">
+
+                <li><a href="/">Exit Demo</a></li>
+            
+            </ul>
+        </nav>
+    </header>
+
+        @RenderBody()
+
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+    <script src="~/Scripts/knockout-2.3.0.js"></script>
+    <script src="~/Scripts/knockout.mapping-latest.debug.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Areas/TrainingCatalog/TrainingScripts/Base.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

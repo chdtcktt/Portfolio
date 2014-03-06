@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "That Code Guy";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section scripts
+{
+    <script src="~/PageScripts/Index/IndexJavaScript.js"></script>
+}
+
+<section id="about">
+    <h3>{ Me; }</h3>
+    <hr />
+    <article>
+
+        <p>
+            Just a couple of years ago I started a journey to become a web developer; little did I know where this journey would take me. I am currently doing small projects for Pacific Market International in Seattle WA. I am also open to freelance work.
+        </p>
+    </article>
+</section>
+
+
+<section id="sites">
+    <article>
+
+        <h3>{ Full Sites; }</h3>
+        <hr />
+
+        <h4>Azure Aesthetics</h4>
+        <a href="http://www.azure-aesthetics.com/" target="_blank"><img src="~/Content/SiteExamples/Azure.JPG" /></a>
+            
+
+        <p>
+            This was my first shot at a production website for a client. Azure Aesthetics is a skin and body studio in Spokane WA.
+            This site is built with .Net MVC3 and features reponsive design, an administrative page so the client can update weekly specials,
+            and a form for customers to submit email info for marketing communicaitons. This was also my first attempt at less css and I found out just
+            how useful this method for writing css can be.
+        </p>
+        <ul class="cl-effect-1">
+            <li><a href="https://github.com/chdtcktt/AzureAesthetics" target="_blank">Azure Aesthetics on GitHub &#187;</a></li>
+            <li><a href="http://www.azure-aesthetics.com/" target="_blank">View Site &#187;</a></li>
+        </ul>
+
+
+        <h4>Sailing Sales</h4>
+
+
+
+        <a href="http://tacketrc-001-site1.smarterasp.net/" target="_blank"><img src="~/Content/SiteExamples/SailingSails.jpg" /></a>
+
+        <p>
+            Sailing Sales is really more of a demo site that I did for my web class so it is not in production, however it does showcase my skills in Asp.net.
+            This site features a gridview with a listing of all products comming back from a database, an inqury button to send the sales force a message.
+            Once the messages are sent they are saved to a database using LINQ to the appropriate record. There is also an administrative page so the sales force
+            can see the current inquires as well as export that data to a txt file.
+
+
+        </p>
+        <ul class="cl-effect-1">
+            <li><a href="https://github.com/chdtcktt/SailingSales" target="_blank">Sailing Sales on GitHub &#187;</a></li>
+            <li><a href="http://tacketrc-001-site1.smarterasp.net/" target="_blank">View Site &#187;</a></li>
+        </ul>
+
+</article>
+
+    <article>
+
+
+        <h3>{ Demos; }</h3>
+        <hr />
+        <h4>Training Catalog</h4>
+        <a href="~/TrainingCatalog/Training/Index" target="_blank"><img src="~/Content/SiteExamples/Training.jpg" /></a>
+
+
+        <p>
+            This site is a good show of my skills as a javascript developer using knockout and jquery. A small demo of a training portal so HR can keep up with all the training needed for every user
+            in the company. The data is retrieved in JSON format from a demo webapi that I also built. A highly effiecient and dynamic example, please feel free to debug to see all network traffic.
+        </p>
+        <ul class="cl-effect-1">
+            <li><a href="https://github.com/chdtcktt/PortfolioWebsite/tree/master/MvcPortfolioWebsite/Areas/TrainingCatalog" target="_blank">Training Demo on GitHub &#187;</a></li>
+            <li><a href="~/TrainingCatalog/Training/Index">View Site &#187;</a></li>
+        </ul>
+
+        <h4>CRUD Operations Demo</h4>
+        <a href="~/CrudDemo/Crud/Index" target="_blank"><img src="~/Content/SiteExamples/Training.jpg" /></a>
+
+
+        <p>
+            This site is a good show of my skills as a javascript developer using knockout and jquery. A small demo of a training portal so HR can keep up with all the training needed for every user
+            in the company. The data is retrieved in JSON format from a demo webapi that I also built. A highly effiecient and dynamic example, please feel free to debug to see all network traffic.
+        </p>
+        <ul class="cl-effect-1">
+            <li><a href="https://github.com/chdtcktt/PortfolioWebsite/tree/master/MvcPortfolioWebsite/Areas/TrainingCatalog" target="_blank">Training Demo on GitHub &#187;</a></li>
+            <li><a href="~/CrudDemo/Crud/Index">View Site &#187;</a></li>
+        </ul>
+
+    </article>
+
+</section>
+
+
+
+
+
+
+
+
+

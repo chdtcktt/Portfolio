@@ -1,0 +1,227 @@
+﻿
+@font-face {
+	font-family: MerriweatherSans-Light;
+	src: url('Fonts/MerriweatherSans-Light.otf') format('opentype');
+}
+
+html {
+    background: #272B30;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    padding: 0;
+    color: #FFFFF0; 
+    line-height: 1.5em;
+
+}
+
+
+    body p {
+        font-weight: 100;
+        font-size: 1em;
+    }
+
+
+h1, h2 {
+      visibility: hidden;
+        position: fixed;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+thead{
+    font-size:large;
+}
+
+header {
+    width: 100%;
+    padding: 60px 0 30px;
+    background: #2e8b57;
+    margin-bottom: 40px;
+    overflow: auto;
+    line-height:1.7em;
+}
+header p{
+    font-size: 1.1em;
+}
+    header nav {
+        width: 80%;
+        margin: 0 auto ;
+    
+        
+    }
+
+        header nav li {
+            position: relative;
+            float: right;
+            display: inline;
+            text-align: center;
+            font-size: .7em;
+
+        }
+
+     
+        header nav li :hover{
+             color: #ff6a00;
+
+        }
+
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header #effect-text{
+        position:absolute;
+        border-radius:10px;
+        padding:5px 5px 5px 5px;
+        background-color: #ff6a00;
+    }
+
+
+#trainingdropdown{
+    margin-bottom: 20px;
+}
+
+#about {
+    text-align:justify;
+}
+
+
+#sites{
+    margin-top: 30px;
+
+}
+
+#sites h3{
+    margin-top: 60px;
+    margin-bottom: 5px;
+}
+
+
+#sites img {
+    width: 20%;
+    padding-bottom:10px;
+}
+
+
+#sites p {
+    width: 79%;
+    float: right;
+
+}
+
+#sites a{
+    color:#808080;
+    text-decoration:none;
+}
+
+#sites a:hover{
+    color:#ff6a00;
+}
+
+#sites ul{
+        margin-bottom:40px;
+}
+
+footer {
+    clear: both;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background: #2e8b57;
+    min-height: 100px;
+}
+
+footer img{
+    position:absolute;
+    width: 25px;
+}
+
+footer a{
+    text-decoration:none;
+    color:#FFFFF0;
+
+}
+
+footer a:hover{
+        color:#ff6a00;
+
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+
+    header nav li {
+        clear: both;
+        position: relative;
+        float: left;
+        display: inline;
+        padding-top: 5px;
+    }
+
+    header nav ul {
+        margin-top: 50px;
+    }
+
+
+
+    #sites img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #sites p {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/*@media screen and (max-width: 800px) {
+
+
+
+    header nav li {
+        clear: both;
+        position: relative;
+        float: left;
+        display: inline;
+        padding-top: 5px;
+    }
+
+    header nav ul {
+        margin-top: 50px;
+    }
+
+
+
+    #sites img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #sites p {
+        width: 99%;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+}*/

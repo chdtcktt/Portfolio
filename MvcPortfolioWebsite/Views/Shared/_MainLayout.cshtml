@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>    
+    <link rel="icon" type="image/png" href="http://thatcodeguy.net/favicon.png" />
+    <link href="~/Content/reset.css" rel="stylesheet" />
+    <link href="~/Content/hovercomponent.css" rel="stylesheet" />
+    <link href="~/Content/mystyles.css" rel="stylesheet" />
+    <script src="~/Content/../Content/../Scripts/modernizr-2.6.2.js"></script> 
+</head>
+<body>
+
+    <header>
+      
+        <nav>
+
+            <p>Hello, I'm </p>
+            <h3>Chad Tackett</h3>
+            <p>I am a web developer and</p>
+
+            <div id="effect-text"></div>
+
+            <ul class="cl-effect-6">
+
+                <li><a href="https://github.com/chdtcktt?tab=repositories" target="_blank">GitHub</a></li>
+                <li><a href="http://resume.linkedinlabs.com/19gmv8goy" target="_blank">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+
+            </ul>
+
+
+
+
+        </nav>
+    </header>
+
+    <h1>That Code Guy</h1>
+    <h2>Chad Tackett web developer in seattle</h2>
+
+    @RenderBody()
+
+    <footer>
+        <small> &copy; 2014 All Rights Reserved &nbsp; | &nbsp;<a name="contact" href="mailto:chdtcktt@thatcodeguy.net">chdtcktt@thatcodeguy.net</a> &nbsp; | &nbsp;<a href="http://www.linkedin.com/pub/chad-tackett/11/3b4/a97" target="_blank"><img src="../../Content/SiteImages/linkedin.png" alt="LinkedIn" /></a></small>
+  
+    </footer>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+    <script src="~/Scripts/knockout-2.3.0.js"></script>
+    <script src="~/Scripts/knockout.mapping-latest.debug.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
