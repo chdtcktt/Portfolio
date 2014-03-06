@@ -17,6 +17,10 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
             }
         }
 
+        /// <summary>
+        /// this method returns an open connection
+        /// </summary>
+        /// <returns></returns>
         public static SqlConnection GetSqlConnection()
         {
             SqlConnection conn = new SqlConnection(ConnectionString);

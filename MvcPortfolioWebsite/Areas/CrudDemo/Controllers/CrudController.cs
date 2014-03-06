@@ -26,7 +26,9 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         /// </summary>
         /// <param name="crudtype"></param>
         public void ReadData(string crudtype)
-        { }
+        { 
+        
+        }
 
 
            //if(crudtype == "1")

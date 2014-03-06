@@ -129,6 +129,7 @@
     <Compile Include="Areas\CrudDemo\Controllers\CrudController.cs" />
     <Compile Include="Areas\CrudDemo\CrudDemoAreaRegistration.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\DataLayer.cs" />
+    <Compile Include="Areas\CrudDemo\Models\ADO\Person.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\AdminController.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\TrainingController.cs" />
     <Compile Include="Areas\TrainingCatalog\TrainingCatalogAreaRegistration.cs" />
@@ -278,7 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\CrudDemo\Models\" />
     <Folder Include="Areas\CrudDemo\Views\Shared\" />
     <Folder Include="Areas\TrainingCatalog\Models\" />
     <Folder Include="Areas\TrainingCatalog\Views\Shared\" />
