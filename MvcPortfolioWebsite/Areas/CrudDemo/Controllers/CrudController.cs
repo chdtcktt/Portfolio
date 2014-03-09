@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,43 +11,38 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
     {
         //
         // GET: /CrudDemo/Crud/
+        CrudOperation Ado;
+
+        public CrudController()
+        {
+           Ado = new CrudOperation();   
+        }
 
         public ActionResult Index()
         {
+            ViewBag.Header = "Crud Demo";
 
-            ViewBag.Header = "CRUD Operations Demo";
+             
+            
+            List<Person> persons = Ado.GetPersons();
+
+
+
 
             return View();
         }
 
 
-
-        /// <summary>
-        /// set the 
-        /// </summary>
-        /// <param name="crudtype"></param>
-        public void ReadData(string crudtype)
-        { 
-        
-        }
-
-
-           //if(crudtype == "1")
-           //{
-               
-           //}
-           //else
-           //{
-
-           //}
-
-        public ActionResult Select(string crudtype)
+        public ActionResult EntityFw()
         {
-           
-
             return View();
-
         }
+
+
+
+ 
+
+  
 
 
     }
