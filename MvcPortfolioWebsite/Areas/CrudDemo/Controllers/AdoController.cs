@@ -22,7 +22,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Header = "Crud Demo";
+            ViewBag.Header = "CRUD Demo";
             var data = ado.GetPersons();
 
             return View(data);
