@@ -138,6 +138,7 @@
     <Compile Include="Areas\CrudDemo\Models\ADO\CrudOperation.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\DataLayer.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\Person.cs" />
+    <Compile Include="Areas\CrudDemo\ViewModels\PersonViewModel.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\AdminController.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\TrainingController.cs" />
     <Compile Include="Areas\TrainingCatalog\TrainingCatalogAreaRegistration.cs" />
