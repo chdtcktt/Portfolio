@@ -19,12 +19,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                 {
                     cmd.CommandText = @"CrudDemo_GetAllPersons";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-
-
                     SqlDataReader reader = cmd.ExecuteReader();
-
-
 
                     while (reader.Read())
                     {
@@ -35,8 +30,9 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                                 FirstName = reader["FirstName"].ToString(),
                                 LastName = reader["LastName"].ToString()
                             });
-                    }     
+                    }
 
+           
                     return persons;
                 }
             }

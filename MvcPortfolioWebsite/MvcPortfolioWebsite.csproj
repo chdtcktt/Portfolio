@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -126,12 +132,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\CrudDemo\Controllers\CrudController.cs" />
+    <Compile Include="Areas\CrudDemo\Controllers\AdoController.cs" />
+    <Compile Include="Areas\CrudDemo\Controllers\EfController.cs" />
     <Compile Include="Areas\CrudDemo\CrudDemoAreaRegistration.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\CrudOperation.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\DataLayer.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\Person.cs" />
-    <Compile Include="Areas\CrudDemo\ViewModels\PersonViewModel.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\AdminController.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\TrainingController.cs" />
     <Compile Include="Areas\TrainingCatalog\TrainingCatalogAreaRegistration.cs" />
@@ -142,6 +148,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Areas\CrudDemo\Scripts\IndexScript.js" />
     <Content Include="Areas\TrainingCatalog\TrainingScripts\Base.js" />
     <Content Include="Areas\TrainingCatalog\TrainingScripts\EditCoursesScript.js" />
@@ -241,7 +251,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\CrudDemo\Views\Web.config" />
-    <Content Include="Areas\CrudDemo\Views\Crud\Index.cshtml" />
+    <Content Include="Areas\CrudDemo\Views\Ado\Index.cshtml" />
+    <Content Include="Areas\CrudDemo\Views\Ef\Index.cshtml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="PageScripts\Index\IndexJavaScript.js" />

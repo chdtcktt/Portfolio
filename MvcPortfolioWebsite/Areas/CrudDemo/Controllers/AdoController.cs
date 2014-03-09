@@ -4,39 +4,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 
 namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 {
-    public class CrudController : Controller
+    public class AdoController : Controller
     {
         //
         // GET: /CrudDemo/Crud/
-        CrudOperation Ado;
+        readonly CrudOperation ado;
 
-        public CrudController()
+        public AdoController()
         {
-           Ado = new CrudOperation();   
+           ado = new CrudOperation();
+              
         }
 
         public ActionResult Index()
         {
             ViewBag.Header = "Crud Demo";
+            var data = ado.GetPersons();
 
-             
-            
-            List<Person> persons = Ado.GetPersons();
-
-
-
-
-            return View();
+            return View(data);
         }
 
 
-        public ActionResult EntityFw()
-        {
-            return View();
-        }
+      
 
 
 
