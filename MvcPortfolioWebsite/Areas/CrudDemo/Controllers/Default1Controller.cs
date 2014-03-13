@@ -1,50 +1,57 @@
-﻿using MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AutoMapper;
-using MvcPortfolioWebsite.Areas.CrudDemo.ViewModels;
 
 namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 {
-    public class AdoController : Controller
+    public class Default1Controller : Controller
     {
         //
-        // GET: /CrudDemo/Crud/
-        readonly CrudOperation ado;
-
-        public AdoController()
-        {
-           ado = new CrudOperation();
-            Mapper.CreateMap<Person,PersonViewModel>();
-              
-        }
+        // GET: /CrudDemo/Default1/
 
         public ActionResult Index()
         {
-            ViewBag.Header = "CRUD Demo";
-            var data = ado.GetPersons();
-            IEnumerable<PersonViewModel> vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(data);
-
-            return View(vm);
-        }
-
-
-        public ActionResult Create(string firstname, string lastname)
-        {
-            int r = ado.CreateNewPerson(firstname,lastname);
-
-            if (r == 0)
-                ViewBag.Message = "Oops there was a problem!";
-            else
-                ViewBag.Message = "Employee record created!";
-
             return View();
-
         }
 
+        //
+        // GET: /CrudDemo/Default1/Details/5
+
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        //
+        // GET: /CrudDemo/Default1/Create
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //
+        // POST: /CrudDemo/Default1/Create
+
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        //
+        // GET: /CrudDemo/Default1/Edit/5
 
         public ActionResult Edit(int id)
         {
@@ -94,18 +101,5 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
                 return View();
             }
         }
-
-
-
-        public ActionResult Error()
-        {
-            return View();
-        }
-
- 
-
-  
-
-
     }
 }

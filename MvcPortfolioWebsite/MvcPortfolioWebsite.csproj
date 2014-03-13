@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\CrudDemo\Controllers\AdoController.cs" />
+    <Compile Include="Areas\CrudDemo\Controllers\Default1Controller.cs" />
     <Compile Include="Areas\CrudDemo\Controllers\EfController.cs" />
     <Compile Include="Areas\CrudDemo\CrudDemoAreaRegistration.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\CrudOperation.cs" />
@@ -254,6 +255,7 @@
     <Content Include="Areas\CrudDemo\Views\Web.config" />
     <Content Include="Areas\CrudDemo\Views\Ado\Index.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ef\Index.cshtml" />
+    <Content Include="Areas\CrudDemo\Views\Ado\Create.cshtml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="PageScripts\Index\IndexJavaScript.js" />

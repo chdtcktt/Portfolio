@@ -3,12 +3,25 @@
 $(document).ready(function () {
 
 
-    ////get value from radio button
-    //$('#select').change(function () {
-    //    var value = $('input[name=crudtype]:checked').val();
+    //get value from radio button
+    function SuccessADO() {
+        Command: toastr[success]("Save was Successful!!", "ADO.NET")
 
-    //    console.log(value);
-    //})
+        toastr.options = {
+            "closeButton": false,
+            "debug": true,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    }
 
 
 

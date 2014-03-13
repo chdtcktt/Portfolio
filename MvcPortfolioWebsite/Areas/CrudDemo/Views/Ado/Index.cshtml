@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_LayoutPage2.cshtml";
 }
 
+
+
 <section id="crud-nav">
     <ul class="nav nav-pills">
         <li class="active"><a href="/CrudDemo/Ado/Index">Traditional ADO.NET</a></li>
@@ -14,9 +16,20 @@
 
 
 <section>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <form action="Create" class="well">
+        <div class="form-group">
+            <label >First Name</label>
+            <input type="text" class="form-control" name="firstname" placeholder="Enter first name..." />
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastname" placeholder="Enter last name..."/>
+        </div>
+        <button type="submit" class="btn btn-default">Create Entry</button>
+    </form>
+
+
+
     <table class="table">
         <thead>
             <tr>
@@ -55,4 +68,6 @@
 
     </table>
 </section>
+
+
 
