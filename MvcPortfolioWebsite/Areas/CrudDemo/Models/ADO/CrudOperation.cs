@@ -39,16 +39,14 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                     //AS
                     //BEGIN
 
-                    //SELECT TOP 1000 BusinessEntityID, FirstName , LastName 
-                    //FROM Person.Person 
+                    //SELECT ID, FirstName , LastName 
+                    //FROM [Custom.Person] 
 
 
                     //END
-                    
-                    
-                    cmd.CommandText = @"CrudDemo_GetAllPersons";
 
-                    
+
+                    cmd.CommandText = @"CrudDemo_GetAllPersons";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -57,22 +55,40 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                         persons.Add(
                             new Person()
                             {
-                                PersonId = Int32.Parse(reader["BusinessEntityId"].ToString()),
+                                PersonId = Int32.Parse(reader["ID"].ToString()),
                                 FirstName = reader["FirstName"].ToString(),
                                 LastName = reader["LastName"].ToString()
                             });
                     }
 
-           
+
                     return persons;
                 }
             }
         }
+       
 
-
-       public void CreateNewPerson()
+        
+       /// <summary>
+       /// takes in two strings from the view then calls a stored proc to insert a new entry into the DB
+       /// </summary>
+       /// <param name="firstname"></param>
+       /// <param name="lastname"></param>
+       public void CreateNewPerson(string firstname, string lastname)
         {
+           using(SqlConnection conn = DataLayer.GetSqlConnection())
+           {
+               using (SqlCommand cmd = conn.CreateCommand())
+               {
+                   cmd.CommandText = @"CrudDemo_InsertEntry";
+                   cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                   cmd.Parameters.Add(new SqlParameter("@FirstName",firstname));
+                   cmd.Parameters.Add(new SqlParameter("@LastName", lastname));
+
+                   int i = cmd.ExecuteNonQuery();
+               }
+           }
         }
     }
 }
