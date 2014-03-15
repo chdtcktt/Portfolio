@@ -48,7 +48,19 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            ViewBag.Header = "Edit Person";
+
+
+            var data = ado.GetPersonById(id);
+
+            var vm = new PersonViewModel
+            {
+                PersonId = data.PersonId,
+                FirstName = data.FirstName,
+                LastName = data.LastName
+            };
+
+            return View(vm);
         }
 
         //
