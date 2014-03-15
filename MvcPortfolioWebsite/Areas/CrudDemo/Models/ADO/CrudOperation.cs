@@ -170,9 +170,6 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                     //    Return 0
                     //END
 
-
-
-
                     cmd.CommandText = @"CrudDemo_GetPeronsonById";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@ID",id));
@@ -191,6 +188,36 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
 
                     return person;
                 }
+            }
+        }
+
+        /// <summary>
+        /// takes in a person object and updates the record on the db
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
+        public int UpdatePersonRecord(Person person)
+        {
+            using (SqlConnection conn = DataLayer.GetSqlConnection())
+            {
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"CrudDemo_EditPersonRecord";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    if(string.IsNullOrEmpty(person.FirstName) || string.IsNullOrEmpty(person.LastName))
+                    {
+                        throw new ArgumentException("Input cannot be empty");
+                    }
+
+                    cmd.Parameters.Add(new SqlParameter("@ID", person.PersonId));
+                    cmd.Parameters.Add(new SqlParameter("FirstName", person.FirstName));
+                    cmd.Parameters.Add(new SqlParameter("@LastName", person.LastName));
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result;
+                }
+
             }
         }
     }

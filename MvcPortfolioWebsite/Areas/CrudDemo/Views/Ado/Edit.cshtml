@@ -6,6 +6,7 @@
 }
 
 <section>
+    <div>@ViewBag.Message</div>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -21,8 +22,8 @@
             </thead>
             <tr>
                 <td>
-                    @Html.EditorFor(model => model.PersonId)
-                    @Html.ValidationMessageFor(model => model.PersonId)
+                    @Html.HiddenFor(model => model.PersonId)
+                    @Html.DisplayFor(model => model.PersonId)
                 </td>
                 <td>
                     @Html.EditorFor(model => model.FirstName)

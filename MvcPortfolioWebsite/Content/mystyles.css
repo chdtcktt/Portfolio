@@ -95,6 +95,10 @@ header p{
         background-color: #ff6a00;
     }
 
+#crud-message{
+    font-size:1.5em;
+    color:yellow;
+}
 
 #trainingdropdown{
     margin-bottom: 20px;

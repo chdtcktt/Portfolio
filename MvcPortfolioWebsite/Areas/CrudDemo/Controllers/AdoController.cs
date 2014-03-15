@@ -25,6 +25,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         public ActionResult Index()
         {
             ViewBag.Header = "CRUD Demo";
+            ViewBag.Message = TempData["message"] as string;
             var data = ado.GetPersons();
             IEnumerable<PersonViewModel> vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(data);
 
@@ -67,16 +68,17 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         // POST: /CrudDemo/Default1/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Person person)
         {
             try
             {
-                // TODO: Add update logic here
-
+                ado.UpdatePersonRecord(person);
+                TempData["message"] = "Person Updated Successful!";
                 return RedirectToAction("Index");
             }
             catch
             {
+                ViewBag.Message = "Oops there was a problem!";
                 return View();
             }
         }
@@ -93,11 +95,11 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         // POST: /CrudDemo/Default1/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Person person)
         {
             try
             {
-                // TODO: Add delete logic here
+                
 
                 return RedirectToAction("Index");
             }
