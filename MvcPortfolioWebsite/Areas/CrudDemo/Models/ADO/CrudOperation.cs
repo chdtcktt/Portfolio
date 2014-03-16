@@ -40,7 +40,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                     //AS
                     //BEGIN
 
-                    //SELECT ID, FirstName , LastName 
+                    //SELECT TOP 500 ID, FirstName , LastName 
                     //FROM [Custom.Person] 
 
 
@@ -165,14 +165,14 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                     //    IF(@@ERROR <> 0)
                     //    BEGIN ROLLBACK TRAN RAISERROR ('Error finding person',16,1) RETURN @@ERROR 
                     //    END
-	
+
                     //    ELSE
                     //    Return 0
                     //END
 
                     cmd.CommandText = @"CrudDemo_GetPeronsonById";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@ID",id));
+                    cmd.Parameters.Add(new SqlParameter("@ID", id));
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -202,10 +202,45 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
             {
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
+                    //USE [DB_9ACB28_CrudDemo]
+                    //GO
+                    ///****** Object:  StoredProcedure [dbo].[CrudDemo_EditPersonRecord]    Script Date: 3/16/2014 2:47:10 PM ******/
+                    //SET ANSI_NULLS ON
+                    //GO
+                    //SET QUOTED_IDENTIFIER ON
+                    //GO
+                    //-- =============================================
+                    //-- Author:		Chad Tackett
+                    //-- Create date: 3/12/14
+                    //-- Description:	edit a person record
+                    //-- =============================================
+                    //ALTER PROCEDURE [dbo].[CrudDemo_EditPersonRecord] 
+                    //    -- Add the parameters for the stored procedure here
+                    //    @ID int,
+                    //    @FirstName nvarchar(50),
+                    //    @LastName nvarchar(50)
+                    //AS
+                    //BEGIN
+                    //    UPDATE [Custom.Person]
+                    //    SET FirstName = @FirstName, LastName = @LastName
+
+                    //    WHERE Id = @ID;
+
+                    //    -- Check for an error creating new person
+                    //    IF(@@ERROR <> 0)
+                    //    BEGIN ROLLBACK TRAN RAISERROR ('Error creating
+                    //    person entry',16,1) RETURN @@ERROR 
+                    //    END
+	
+                    //    ELSE
+                    //    Return 0
+
+                    //END
+
                     cmd.CommandText = @"CrudDemo_EditPersonRecord";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    if(string.IsNullOrEmpty(person.FirstName) || string.IsNullOrEmpty(person.LastName))
+                    if (string.IsNullOrEmpty(person.FirstName) || string.IsNullOrEmpty(person.LastName))
                     {
                         throw new ArgumentException("Input cannot be empty");
                     }
@@ -219,6 +254,60 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
                 }
 
             }
+        }
+
+        /// <summary>
+        /// delete a person record by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int DeletePersonById(int id)
+        {
+            using (SqlConnection conn = DataLayer.GetSqlConnection())
+            {
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+
+                    //USE [DB_9ACB28_CrudDemo]
+                    //GO
+                    ///****** Object:  StoredProcedure [dbo].[CrudDemo_DeletePersonById]    Script Date: 3/16/2014 2:47:42 PM ******/
+                    //SET ANSI_NULLS ON
+                    //GO
+                    //SET QUOTED_IDENTIFIER ON
+                    //GO
+                    //-- =============================================
+                    //-- Author:		Chad Tackett
+                    //-- Create date: 3/16/14
+                    //-- Description:	Delete a person record from ID
+                    //-- =============================================
+                    //ALTER PROCEDURE [dbo].[CrudDemo_DeletePersonById] 
+                    //    -- Add the parameters for the stored procedure here
+                    //    @ID int
+                    //AS
+                    //BEGIN
+                    //    DELETE FROM [Custom.Person]
+                    //    WHERE ID = @ID
+	
+                    //    -- Check for an error creating new person
+                    //    IF(@@ERROR <> 0)
+                    //    BEGIN ROLLBACK TRAN RAISERROR ('Error finding person',16,1) RETURN @@ERROR 
+                    //    END
+	
+                    //    ELSE
+                    //    Return 0
+                    //END
+
+
+                    cmd.CommandText = @"CrudDemo_DeletePersonById";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@ID", id));
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result;
+                }
+            }
+
         }
     }
 }

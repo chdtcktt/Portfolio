@@ -6,7 +6,9 @@
 }
 
 <section>
-    <div>@ViewBag.Message</div>
+    <div id="crud-message" class="pull-right">
+        @ViewBag.Message
+    </div>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -27,11 +29,9 @@
                 </td>
                 <td>
                     @Html.EditorFor(model => model.FirstName)
-                    @Html.ValidationMessageFor(model => model.FirstName)
                 </td>
                 <td>
                     @Html.EditorFor(model => model.LastName)
-                    @Html.ValidationMessageFor(model => model.LastName)
                 </td>
             </tr>
 

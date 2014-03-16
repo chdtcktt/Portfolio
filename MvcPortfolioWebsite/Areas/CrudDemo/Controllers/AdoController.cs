@@ -88,23 +88,36 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            ViewBag.Message = "Are you sure you want to delete this record?";
+            ViewBag.Header = "Delete Person";
+
+
+            var data = ado.GetPersonById(id);
+
+            var vm = new PersonViewModel
+            {
+                PersonId = data.PersonId,
+                FirstName = data.FirstName,
+                LastName = data.LastName
+            };
+            return View(vm);
         }
 
         //
         // POST: /CrudDemo/Default1/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(Person person)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                
-
+                ado.DeletePersonById(id);
+                TempData["message"] = "Person Deleted Successful!";
                 return RedirectToAction("Index");
             }
             catch
             {
+                ViewBag.Message = "Oops there was a problem!";
                 return View();
             }
         }
