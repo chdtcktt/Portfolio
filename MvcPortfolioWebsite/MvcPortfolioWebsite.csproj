@@ -169,6 +169,7 @@
     <Content Include="Content\mystyles.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\SiteExamples\Azure.JPG" />
+    <Content Include="Content\SiteExamples\CrudDemo.JPG" />
     <Content Include="Content\SiteExamples\SailingSails.JPG" />
     <Content Include="Content\SiteExamples\Training.JPG" />
     <Content Include="Content\SiteImages\Construction.jpg" />
