@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using MvcPortfolioWebsite.Areas.CrudDemo.Models.EnityFramework;
+using MvcPortfolioWebsite.Areas.CrudDemo.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +11,31 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 {
     public class EfController : Controller
     {
+        readonly DB_9ACB28_CrudDemoEntities db;
+
+        public EfController()
+        {
+            db = new DB_9ACB28_CrudDemoEntities();
+            
+            //fix formating from auto generated model using automapper
+            Mapper.CreateMap<Custom_Person, PersonViewModel>()
+                .ForMember(dest => dest.PersonId, opt => opt.MapFrom(source => source.ID));
+            
+
+        }
+
         //
         // GET: /CrudDemo/Ef/
-
         public ActionResult Index()
         {
-            ViewBag.Header = "Currently under construction";
+            ViewBag.Header = "CRUD Demo";
 
-            return View();
+            var data = db.Custom_Person.Take(500).OrderByDescending(x=>x.ID);
+            IEnumerable<PersonViewModel> vm = Mapper.Map<IEnumerable<Custom_Person>, IEnumerable<PersonViewModel>>(data);
+
+            return View(vm);
         }
 
-        //
-        // GET: /CrudDemo/Ef/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
         //
         // GET: /CrudDemo/Ef/Create

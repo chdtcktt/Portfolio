@@ -42,6 +42,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Models.ADO
 
                     //SELECT TOP 500 ID, FirstName , LastName 
                     //FROM [Custom.Person] 
+                    //ORDER BY ID DESC;
 
 
                     //END

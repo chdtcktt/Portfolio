@@ -50,6 +50,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -133,12 +135,29 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\CrudDemo\Controllers\AdoController.cs" />
-    <Compile Include="Areas\CrudDemo\Controllers\Default1Controller.cs" />
     <Compile Include="Areas\CrudDemo\Controllers\EfController.cs" />
     <Compile Include="Areas\CrudDemo\CrudDemoAreaRegistration.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\CrudOperation.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\DataLayer.cs" />
     <Compile Include="Areas\CrudDemo\Models\ADO\Person.cs" />
+    <Compile Include="Areas\CrudDemo\Models\EnityFramework\Custom_Person.cs">
+      <DependentUpon>PersonModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\CrudDemo\ViewModels\PersonViewModel.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\AdminController.cs" />
     <Compile Include="Areas\TrainingCatalog\Controllers\TrainingController.cs" />
@@ -256,10 +275,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\CrudDemo\Views\Web.config" />
     <Content Include="Areas\CrudDemo\Views\Ado\Index.cshtml" />
-    <Content Include="Areas\CrudDemo\Views\Ef\Index.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ado\Create.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ado\Edit.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ado\Delete.cshtml" />
+    <EntityDeploy Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PersonModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersonModel.edmx</DependentUpon>
+      <LastGenOutput>PersonModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.edmx.diagram">
+      <DependentUpon>PersonModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersonModel.edmx</DependentUpon>
+      <LastGenOutput>PersonModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\CrudDemo\Views\Ef\Index.cshtml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="PageScripts\Index\IndexJavaScript.js" />
@@ -307,6 +343,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

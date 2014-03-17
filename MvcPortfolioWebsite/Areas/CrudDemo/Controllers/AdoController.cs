@@ -26,6 +26,9 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         {
             ViewBag.Header = "CRUD Demo";
             ViewBag.Message = TempData["message"] as string;
+
+
+
             var data = ado.GetPersons();
             IEnumerable<PersonViewModel> vm = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(data);
 
