@@ -29,6 +29,8 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         public ActionResult Index()
         {
             ViewBag.Header = "CRUD Demo";
+            ViewBag.Message = TempData["message"] as string;
+
 
             var data = db.Custom_Person.Take(500).OrderByDescending(x=>x.ID);
             IEnumerable<PersonViewModel> vm = Mapper.Map<IEnumerable<Custom_Person>, IEnumerable<PersonViewModel>>(data);
@@ -36,32 +38,37 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
             return View(vm);
         }
 
-
-        //
-        // GET: /CrudDemo/Ef/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // POST: /CrudDemo/Ef/Create
-
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(string firstname, string lastname)
         {
-            try
+            if(string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname))
             {
-                // TODO: Add insert logic here
+                TempData["message"] = "You must enter something in both fields to create a record";
 
                 return RedirectToAction("Index");
             }
-            catch
+
+            else
             {
+
+                Custom_Person person = new Custom_Person
+                {
+                    FirstName = firstname,
+                    LastName = lastname
+
+                };
+
+                db.Custom_Person.Add(person);
+                db.SaveChanges();
+
+                ViewBag.Message = "Employee record created!";
                 return View();
             }
+ 
+
         }
+
+
 
         //
         // GET: /CrudDemo/Ef/Edit/5

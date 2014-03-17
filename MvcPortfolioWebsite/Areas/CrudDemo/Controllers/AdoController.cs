@@ -35,17 +35,30 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
             return View(vm);
         }
 
-
+        [HttpPost]
         public ActionResult Create(string firstname, string lastname)
         {
-            int r = ado.CreateNewPerson(firstname,lastname);
+            if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname))
+            {
+                TempData["message"] = "You must enter something in both fields to create a record";
 
-            if (r == 0)
-                ViewBag.Message = "Oops there was a problem!";
+                return RedirectToAction("Index");
+            }
+
             else
-                ViewBag.Message = "Employee record created!";
+            {
+                int r = ado.CreateNewPerson(firstname, lastname);
 
-            return View();
+                if (r == 0)
+                    ViewBag.Message = "Oops there was a problem!";
+                else
+                    ViewBag.Message = "Employee record created!";
+
+                return View();
+            }
+
+
+     
 
         }
 
