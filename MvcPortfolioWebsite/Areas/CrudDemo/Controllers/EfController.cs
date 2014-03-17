@@ -68,30 +68,44 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 
         }
 
-
-
         //
         // GET: /CrudDemo/Ef/Edit/5
 
         public ActionResult Edit(int id)
         {
-            return View();
+            ViewBag.Header = "Edit Person";
+
+            var data = db.Custom_Person.FirstOrDefault(x => x.ID == id);
+
+            var vm = new PersonViewModel
+            {
+                PersonId = data.ID,
+                FirstName = data.FirstName,
+                LastName = data.LastName
+            };
+
+            return View(vm);
         }
 
         //
         // POST: /CrudDemo/Ef/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Custom_Person person)
         {
             try
             {
-                // TODO: Add update logic here
+                Custom_Person p = db.Custom_Person.FirstOrDefault(x=>x.ID == person.ID);
 
+                p.FirstName = person.FirstName;
+                p.LastName = person.LastName;
+                db.SaveChanges();
+                TempData["message"] = "Person Updated Successful!";
                 return RedirectToAction("Index");
             }
             catch
             {
+                TempData["message"] = "Oops there was a problem!";
                 return View();
             }
         }

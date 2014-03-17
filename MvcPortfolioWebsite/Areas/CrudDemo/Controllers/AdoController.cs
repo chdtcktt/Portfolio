@@ -94,7 +94,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
             }
             catch
             {
-                ViewBag.Message = "Oops there was a problem!";
+                TempData["message"] = "Oops there was a problem!";
                 return View();
             }
         }
