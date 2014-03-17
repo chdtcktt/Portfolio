@@ -275,7 +275,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\CrudDemo\Views\Web.config" />
     <Content Include="Areas\CrudDemo\Views\Ado\Index.cshtml" />
-    <Content Include="Areas\CrudDemo\Views\Ado\Create.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ado\Edit.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ado\Delete.cshtml" />
     <EntityDeploy Include="Areas\CrudDemo\Models\EnityFramework\PersonModel.edmx">
@@ -296,8 +295,8 @@
       <LastGenOutput>PersonModel.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\CrudDemo\Views\Ef\Index.cshtml" />
-    <Content Include="Areas\CrudDemo\Views\Ef\Create.cshtml" />
     <Content Include="Areas\CrudDemo\Views\Ef\Edit.cshtml" />
+    <Content Include="Areas\CrudDemo\Views\Ef\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="PageScripts\Index\IndexJavaScript.js" />

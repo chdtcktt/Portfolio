@@ -38,7 +38,6 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
             return View(vm);
         }
 
-        [HttpPost]
         public ActionResult Create(string firstname, string lastname)
         {
             if(string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname))
@@ -61,8 +60,8 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
                 db.Custom_Person.Add(person);
                 db.SaveChanges();
 
-                ViewBag.Message = "Employee record created!";
-                return View();
+                TempData["message"] = "Employee record created!";
+                return RedirectToAction("Index");
             }
  
 
@@ -74,8 +73,10 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.Header = "Edit Person";
+            ViewBag.Message = TempData["message"] as string;
 
-            var data = db.Custom_Person.FirstOrDefault(x => x.ID == id);
+
+            var data = db.Custom_Person.First(x => x.ID == id);
 
             var vm = new PersonViewModel
             {
@@ -95,8 +96,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         {
             try
             {
-                Custom_Person p = db.Custom_Person.FirstOrDefault(x=>x.ID == person.ID);
-
+                var p = db.Custom_Person.First(x=>x.ID == person.ID);
                 p.FirstName = person.FirstName;
                 p.LastName = person.LastName;
                 db.SaveChanges();
@@ -115,7 +115,19 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            ViewBag.Message = "Are you sure you want to delete this record?";
+            ViewBag.Header = "Delete Person";
+
+            var data = db.Custom_Person.First(x => x.ID == id);
+
+            var vm = new PersonViewModel
+            {
+                PersonId = data.ID,
+                FirstName = data.FirstName,
+                LastName = data.LastName
+            };
+       
+            return View(vm);
         }
 
         //
@@ -126,12 +138,18 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Custom_Person p = db.Custom_Person.First(x => x.ID == id);
+                db.Custom_Person.Remove(p);
+                db.SaveChanges();
+
+                TempData["message"] = "Person Deleted Successful!";
+
 
                 return RedirectToAction("Index");
             }
             catch
             {
+                ViewBag.Message = "Oops there was a problem!";
                 return View();
             }
         }

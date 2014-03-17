@@ -1,0 +1,46 @@
+﻿@model MvcPortfolioWebsite.Areas.CrudDemo.ViewModels.PersonViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<section>
+    <h3>
+        @ViewBag.Message
+    </h3>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Employee ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.PersonId)
+                @Html.HiddenFor(model => model.PersonId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FirstName)
+                @Html.HiddenFor(model => model.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LastName)
+                @Html.HiddenFor(model => model.LastName)
+            </td>
+        </tr>
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            <input class="btn btn-primary" type="submit" value="Delete" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+
+</section>

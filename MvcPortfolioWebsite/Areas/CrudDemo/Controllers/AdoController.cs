@@ -35,7 +35,6 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
             return View(vm);
         }
 
-        [HttpPost]
         public ActionResult Create(string firstname, string lastname)
         {
             if (string.IsNullOrEmpty(firstname) || string.IsNullOrEmpty(lastname))
@@ -50,11 +49,12 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
                 int r = ado.CreateNewPerson(firstname, lastname);
 
                 if (r == 0)
-                    ViewBag.Message = "Oops there was a problem!";
+                    TempData["message"] = "Oops there was a problem!";
                 else
-                    ViewBag.Message = "Employee record created!";
+                    TempData["message"] = "Employee record created!";
 
-                return View();
+
+                return RedirectToAction("Index");
             }
 
 
@@ -66,6 +66,8 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.Header = "Edit Person";
+            ViewBag.Message = TempData["message"] as string;
+
 
 
             var data = ado.GetPersonById(id);
@@ -127,6 +129,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
         {
             try
             {
+
                 ado.DeletePersonById(id);
                 TempData["message"] = "Person Deleted Successful!";
                 return RedirectToAction("Index");
