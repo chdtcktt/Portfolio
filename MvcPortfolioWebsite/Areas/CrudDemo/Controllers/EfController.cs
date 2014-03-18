@@ -106,7 +106,7 @@ namespace MvcPortfolioWebsite.Areas.CrudDemo.Controllers
             catch
             {
                 TempData["message"] = "Oops there was a problem!";
-                return View();
+                return RedirectToAction("Index");
             }
         }
 

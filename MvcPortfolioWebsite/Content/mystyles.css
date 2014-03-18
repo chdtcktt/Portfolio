@@ -90,9 +90,11 @@ header p{
 
     header #effect-text{
         position:absolute;
-        border-radius:10px;
+        /*border-radius:10px;*/
         padding:5px 5px 5px 5px;
-        background-color: #ff6a00;
+        border: 2px solid white;
+        color:#ff6a00;
+        /*background-color: #ff6a00;*/
     }
 
 #crud-message{

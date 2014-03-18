@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿/// <reference path="../../Scripts/jquery-1.9.1.min.js" />
+$(document).ready(function () {
 
 
     //custom jquery plugin loadText()
@@ -22,11 +23,11 @@
     //array for nav
     var helloArray =
         [
-            "{ I like .NET; }",
-            "{ I love new challenges; }",
-            "{ I have a wonderful wife; }",
-            "{ I am a transplant from Louisiana; }",
-            "{ I am out of things to say; }",
+            "I like .NET",
+            "I love new challenges",
+            "I have a wonderful wife",
+            "I am a transplant from Louisiana",
+            "I am out of things to say",
         ];
     //load text into text effect
     $('#effect-text').loadText(helloArray, 5000); // ( array, interval )
