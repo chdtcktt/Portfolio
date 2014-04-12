@@ -1,4 +1,5 @@
-﻿/// <reference path="../../Scripts/jquery-1.9.1.min.js" />
+﻿/// <reference path="../../Scripts/_references.js" />
+/// <reference path="../../Scripts/jquery.slicknav.min.js" />
 $(document).ready(function () {
 
 
@@ -39,6 +40,14 @@ $(document).ready(function () {
     $("a[href='#contact']").click(function () {
         $("html, body").animate({ scrollTop: $(document).height() }, "slow");
         return false;
+    });
+
+
+
+    //for the mobile responsive nav bar
+    $('#menu').slicknav({
+        label: '',
+        duration: 100,
     });
 
 

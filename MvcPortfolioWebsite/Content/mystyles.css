@@ -68,6 +68,10 @@ header p{
         
     }
 
+    .slicknav_menu{
+        display:none;
+    }
+
         header nav li {
             position: relative;
             float: right;
@@ -179,23 +183,38 @@ footer a:hover{
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
+   
 
-
-    header nav li {
-        clear: both;
-        position: relative;
-        float: left;
-        display: inline;
-        padding-top: 5px;
-    }
-
-    header nav ul {
-        margin-top: 50px;
+    header{
+        padding:0px 0 0px;
+        min-height: 150px;
     }
 
 
+    .js #menu {
+        display: none;
+    }
+
+    .js .slicknav_menu {
+        display: block;
+        /*position: fixed;
+        width: 100%;
+        z-index: 1000;*/
+        background: #2e8b57;
+    }
+
+    .slicknav_nav {
+        background-color: #ff6a00;
+        font-size: large;
+        text-align: center;
+    }
+
+    .slicknav_btn {
+        background-color: #ff6a00;
+       padding:15px 15px 15px 15px
+    }
 
     #sites img {
         width: 100%;
@@ -208,32 +227,3 @@ footer a:hover{
     }
 }
 
-/*@media screen and (max-width: 800px) {
-
-
-
-    header nav li {
-        clear: both;
-        position: relative;
-        float: left;
-        display: inline;
-        padding-top: 5px;
-    }
-
-    header nav ul {
-        margin-top: 50px;
-    }
-
-
-
-    #sites img {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    #sites p {
-        width: 99%;
-        margin-bottom: 30px;
-        text-align: justify;
-    }
-}*/
