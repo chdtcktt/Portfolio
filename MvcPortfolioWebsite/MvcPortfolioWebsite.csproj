@@ -196,10 +196,9 @@
     <Content Include="Content\SiteImages\Construction.jpg" />
     <Content Include="Content\SiteImages\linkedin_dark.png" />
     <Content Include="Content\SiteImages\linkedin.png" />
-    <Content Include="Content\SiteImages\Photos\couch.jpg" />
+    <Content Include="Content\SiteImages\Photos\ellen.jpg" />
     <Content Include="Content\SiteImages\Photos\face.jpg" />
-    <Content Include="Content\SiteImages\Photos\looking.jpg" />
-    <Content Include="Content\SiteImages\Photos\outsiderail.jpg" />
+    <Content Include="Content\SiteImages\Photos\looking_bw.jpg" />
     <Content Include="Content\SiteImages\Photos\rock.jpg" />
     <Content Include="Content\slicknav.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -344,6 +343,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage2.cshtml" />
     <Content Include="Views\Work\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
