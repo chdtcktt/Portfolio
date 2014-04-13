@@ -54,7 +54,6 @@ header {
     width: 100%;
     padding: 30px 0 30px;
     background-color: darkslategray ;
-    /*margin-bottom: 40px;*/
     overflow: auto;
     line-height:1.7em;
 }
@@ -94,63 +93,49 @@ header p{
 
     header #effect-text{
         position:absolute;
-        /*border-radius:10px;*/
         padding:5px 5px 5px 5px;
         border: 2px solid white;
         color:#ff6a00;
-        /*background-color: #ff6a00;*/
     }
 
-#crud-message{
-    font-size:1.5em;
-    color:yellow;
+.cl-effect-8 a::before, .cl-effect-8 a::after {
+    border: 2px solid white;
+
 }
 
-#trainingdropdown{
+
+
+.work-sites img{
+    width:100%;
+    margin: 50px 0 0 0;
+    border:3px solid #ff6a00;
+}
+
+
+.work-sites h3{
+    font-size:2.5em;
+    font-weight:bold;
+    margin: 50px 0 50px 0; 
+}
+
+.work-sites p{
     margin-bottom: 20px;
 }
 
-#about {
-    text-align:justify;
-}
-
-
-#sites{
-    margin-top: 30px;
-
-}
-
-#sites h3{
-    margin-top: 60px;
-    margin-bottom: 5px;
-}
-
-
-#sites img {
-    width: 20%;
-    padding-bottom:10px;
-}
-
-
-#sites p {
-    width: 79%;
-    float: right;
-
-}
-
-#sites a{
-    color:#808080;
+.work-sites > .site-link{
+    color:#fff;
+    border: 2px solid #FFFFF0;
+    padding:10px 10px 10px 10px;
     text-decoration:none;
 }
 
-#sites a:hover{
-    color:#ff6a00;
+.work-sites a:hover{
+    color: #ff6a00;
 }
 
-#sites ul{
-        margin-bottom:40px;
+.large-image{
+    width:100%;
 }
-
 
 
 footer {
@@ -172,12 +157,7 @@ footer a{
     color:#FFFFF0;
 
 }
-footer small{
-  background-color:darkslategray;
-  border-radius:20px 20px 20px 20px;
-  padding: 10px 10px 10px 10px;
 
-}
 
 footer a:hover{
         color:#ff6a00;
@@ -196,6 +176,7 @@ footer a:hover{
         padding:0px 0 0px;
         min-height: 150px;
     }
+
 
 
     .js #menu {

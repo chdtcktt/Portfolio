@@ -1,0 +1,16 @@
+﻿
+.main-content{
+    margin-top: 50px;
+}
+
+
+.crud-form{
+    width:30%;
+}
+
+
+#crud-message{
+    font-size:1.5em;
+    color:yellow;
+}
+

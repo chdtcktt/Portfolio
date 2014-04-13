@@ -185,6 +185,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\demo.css" />
     <Content Include="Content\hovercomponent.css" />
     <Content Include="Content\mystyles.css" />
     <Content Include="Content\reset.css" />
@@ -195,8 +196,8 @@
     <Content Include="Content\SiteImages\Construction.jpg" />
     <Content Include="Content\SiteImages\linkedin_dark.png" />
     <Content Include="Content\SiteImages\linkedin.png" />
-    <Content Include="Content\SiteImages\Photos\294562_10150265906388019_2393543_n_edited.jpg" />
-    <Content Include="Content\SiteImages\Photos\704087_10200155675721626_1701036160_o.jpg" />
+    <Content Include="Content\SiteImages\Photos\couch.jpg" />
+    <Content Include="Content\SiteImages\Photos\outsiderail.jpg" />
     <Content Include="Content\slicknav.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

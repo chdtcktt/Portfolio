@@ -25,7 +25,8 @@ $(document).ready(function () {
     var helloArray =
         [
             "I like .NET",
-            "I love new challenges",
+            "I like JavaScript",
+            "I take pictures sometimes",
             "I have a wonderful wife",
             "I am a transplant from Louisiana",
             "I am out of things to say",
