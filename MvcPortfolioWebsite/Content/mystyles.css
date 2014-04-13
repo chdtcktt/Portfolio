@@ -72,6 +72,10 @@ header p{
         display:none;
     }
 
+    #welcome{
+        cursor: pointer;
+    }
+
         header nav li {
             position: relative;
             float: right;

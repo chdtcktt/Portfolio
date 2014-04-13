@@ -1,4 +1,5 @@
-﻿/// <reference path="../../Scripts/_references.js" />
+﻿/// <reference path="../Scripts/jquery-1.9.1.min.js" />
+/// <reference path="../../Scripts/_references.js" />
 /// <reference path="../../Scripts/jquery.slicknav.min.js" />
 $(document).ready(function () {
 
@@ -50,6 +51,17 @@ $(document).ready(function () {
         label: '',
         duration: 100,
     });
+
+
+    //on click welcome redirect to home
+    $('#welcome').click(function () {
+        window.location ='/';
+    });
+
+
+     
+
+
 
 
 });
