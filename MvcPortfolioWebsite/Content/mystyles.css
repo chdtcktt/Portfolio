@@ -177,7 +177,9 @@ footer a:hover{
         min-height: 150px;
     }
 
-
+    .work-sites h3{
+    font-size:1.1em; 
+}
 
     .js #menu {
         display: none;
